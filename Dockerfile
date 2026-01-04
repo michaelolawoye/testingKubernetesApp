@@ -1,5 +1,15 @@
-FROM ubuntu:latest as stage1
+FROM ubuntu:latest
 
-RUN apt install python3
+RUN apt update
 
-RUN apt install python3-tk
+RUN apt install -y git
+
+RUN apt install -y python3
+
+RUN apt install -y python3-venv
+
+RUN git clone https://github.com/michaelolawoye/testingKubernetesApp.git 
+
+WORKDIR /testingKubernetesApp
+
+CMD ["python3", "testpy.py"]
