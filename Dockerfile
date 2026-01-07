@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 
-ARG STATEMENT="v1"
+ARG STATEMENT="version1"
+
+ENV IMAGE_VERSION=$STATEMENT
 
 RUN apt update
 

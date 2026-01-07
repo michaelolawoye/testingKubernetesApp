@@ -1,6 +1,6 @@
+import os
 print("Hello from the container!")
 
-with open("read.txt", "r") as f:
-	s = f.read()
-	print(f"File contents is: {s}")
+container_name= os.getenv("IMAGE_VERSION", "default")
 
+print(f"This is a container made from image {container_name}")
